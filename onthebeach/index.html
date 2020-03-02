@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="author" content="Hongtaewon">
+    <meta name="description" content="온더비치">
+    <meta name="keywords" content="반응형사이트, 웹접근성, HTML5, webs">
+    <title>온더비치</title>
+
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <!-- HTLM5shiv ie6~8 -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script type="text/javascript">
+            alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+        </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="row">
+            <div class="header">
+                <div class="header_menu">
+                    <a href="">Blog</a>
+                    <a href="">facebook</a>
+                    <a href="">Webstandard</a>
+                </div>
+                <!-- //header_menu -->
+                <div class="header_tit">
+                  <h1><a href="#">온더비치</a></h1>
+                </div>
+                <!-- //header_tit -->
+            </div>
+        </div>
+      </div>
+    </header>
+    <!-- //header -->
+
+    <nav id="nav">
+      <div class="container">
+        <div class="row">
+          <div class="nav">
+            <h2 class="ir_su">전체 메뉴</h2>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- //nav -->
+
+    <main>
+      <section id="contents">
+        <div class="container">
+          <h2 class="ir_su">메인 컨텐츠</h2>
+          <section class="content con1">
+              <h3 class="ir_su">1번 컨텐츠</h3>
+              <div class="cover">
+                <h4 class="ir_su">1번 커버</h4>
+                <a href="#">first</a>
+              </div>
+              <article class="column col1">
+                <h4 class="ir_su">1번 메인 이미지</h4>
+                <figure>
+                  <img src="img/test1.jpg" alt="이미지1">
+                </figure>
+              </article>
+              <article class="column col2">
+                <h4 class="ir_su">1번 이미지 설명 1</h4>
+              </article>
+              <article class="column col3">
+                <h4 class="ir_su">1번 이미지 설명 2</h4>
+              </article>
+          </section>
+          <!-- //1번 컨텐츠 -->
+          <section class="content con2">
+            <h3 class="ir_su">2번 컨텐츠</h3>
+            <div class="cover">
+              <h4 class="ir_su">2번 커버</h4>
+              <a href="#">second</a>
+            </div>
+            <article class="column col1">
+              <h4 class="ir_su">2번 메인 이미지</h4>
+              <figure>
+                <img src="img/test2.jpg" alt="이미지2">
+              </figure>
+            </article>
+            <article class="column col2">
+              <h4 class="ir_su">2번 이미지 설명 1</h4>
+            </article>
+            <article class="column col3">
+              <h4 class="ir_su">2번 이미지 설명 2</h4>
+            </article>
+          </section>
+          <!-- //2번 컨텐츠 -->
+          <section class="content con3">
+            <h3 class="ir_su">3번 컨텐츠</h3>
+            <div class="cover">
+              <h4 class="ir_su">3번 커버</h4>
+              <a href="#">third</a>
+            </div>
+            <article class="column col1">
+              <h4 class="ir_su">3번 메인 이미지</h4>
+              <figure>
+                <img src="img/test3.jpg" alt="이미지3">
+              </figure>
+            </article>
+            <article class="column col2">
+              <h4 class="ir_su">3번 이미지 설명 1</h4>
+            </article>
+            <article class="column col3">
+              <h4 class="ir_su">3번 이미지 설명 2</h4>
+            </article>
+
+          </section>
+          <!-- //3번 컨텐츠 -->
+          <section class="content con4">
+            <h3 class="ir_su">4번 컨텐츠</h3>
+            <div class="cover">
+              <h4 class="ir_su">4번 커버</h4>
+              <a href="#">fourth</a>
+            </div>
+            <article class="column col1">
+              <h4 class="ir_su">4번 메인 이미지</h4>
+              <figure>
+                <img src="img/test4.jpg" alt="이미지4">
+              </figure>
+            </article>
+            <article class="column col2">
+              <h4 class="ir_su">4번 이미지 설명 1</h4>
+            </article>
+            <article class="column col3">
+              <h4 class="ir_su">4번 이미지 설명 2</h4>
+            </article>
+
+          </section>
+          <!-- //4번 컨텐츠 -->
+        </div>
+      </section>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+
+        </div>
+      </div>
+    </footer>
+    <!-- //footer -->
+    <!-- JavaScript Libraries -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="js/modernizr-custom.js"></script>
+    <script>
+    $(".cover").click(function(e){
+      var coverNode =  $(this);
+      $(".cover").attr("class","cover");
+      coverNode.attr("class","cover open");
+
+
+
+      if($(".cover").hasClass("open") ){
+        //open이 있을 때
+        $(this).parent().siblings().css({
+        "width" : "5%"
+        });
+        $(this).parent().css({
+        "width" : "85%"
+        });
+        $(this).siblings().css({
+          "display" : "block"
+        });
+        $(this).css({
+          "display" : "none"
+        });
+        $(this).parent().siblings().find(".column").css({
+          "display" : "none"
+        });
+        $(this).parent().siblings().find(".cover").css({
+          "display" : "block"
+        });
+      }
+    });
+
+    </script>
+  </body>
+</html>
