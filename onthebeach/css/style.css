@@ -2,19 +2,18 @@
 
 body {  background-color: #000000;}
 #header {}
-#contents {
-
-}
+#contents {}
+#contents .container {margin-left: 0;}
 #footer {background-color: #aaf7fd;}
 
 
 /* 컨테이너 */
-.container {width: 100%; margin: 0 auto;}
+.container {position: relative; width: 100%; margin: 0 auto;}
 
 /* 헤더 */
-.header .header_menu {text-align: right; margin-right: 10px;}
-.header .header_menu a {color: #fff; padding: 8px 0 6px 10px; display: inline-block; transition: color 0.3s ease; font-family: 'Abel', sans-serif;}
-.header .header_menu a:hover {color: #ccc;}
+.header {
+  height: 10%;
+}
 .header .header_tit {text-align: center; text-transform: uppercase;margin-top: 5px; font-family: 'Abel', sans-serif; }
 .header .header_tit a {
   font-size: 40px; color: #fff;
@@ -25,48 +24,86 @@ body {  background-color: #000000;}
 }
 
 /* 컨텐츠 */
-.content {float: left;}
-
-.content.con1 {
-  width: 85%;
-  background-color: #AAAAAA;
-  transition: all 0.7s ease;
-}
-.content.con2 {
-  width: 5%;
-  background-color: #1BABAA;
-  transition: all 0.7s ease;
-}
-.content.con3 {
-  width: 5%;
-  background-color: #2ACCCC;
-  transition: all 0.7s ease;
-}
-.content.con4 {
-  width: 5%;
-  background-color: #3DCCCC;
-  transition: all 0.7s ease;
+.panel {
 }
 
-.column.col1 {display: none;}
-.column.col2 {display: none;}
-.column.col3 {display: none;}
+.panel .cover{
+  position: absolute;
+  right: 0;
+}
 
-.content.con1 .cover {display: none;}
-.content.con1 .column.col1 {display: block;}
-.content.con1 .column.col2 {display: block;}
-.content.con1 .column.col3 {display: block;}
-
-.cover {}
-.cover a {
-  font-size: 40px;
-  color: #fff;
+.panel .cover span {
+  position: fixed;
+  font-size: 20px;
+  height: 100%;
+  width: 2.5%;
+  background-color: #ffffff;
   writing-mode:vertical-lr;
+  border-right: 1px solid #dbdbdb;
+}
+.panel .cover span:nth-child(4) {
+  border-right: 0;
+}
+
+.panel.p1 {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: margin-left 0.7s ease;
+}
+.panel.p2 {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 2.5%;
+  z-index: 9;
+  transition: margin-left 0.7s ease;
+}
+.panel.p3 {
+  width: 90%;
+  position: absolute;
+  transition: margin-left 0.7s ease;
+  top: 0;
+  left: 5%;
+  z-index: 8;
+}
+.panel.p4 {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 7.5%;
+  z-index: 7;
+  transition: margin-left 0.7s ease;
+}
+
+
+/**scroll**/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0e8000;
 }
 
 /* mediaquery */
 /* 화면 너비 0~1220px */
-@media (max-width: 1220px){
+@media (max-width: 1600px){
   .container {width: 100%;}
 }
 

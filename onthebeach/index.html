@@ -31,12 +31,6 @@
       <div class="container">
         <div class="row">
             <div class="header">
-                <div class="header_menu">
-                    <a href="">Blog</a>
-                    <a href="">facebook</a>
-                    <a href="">Webstandard</a>
-                </div>
-                <!-- //header_menu -->
                 <div class="header_tit">
                   <h1><a href="#">온더비치</a></h1>
                 </div>
@@ -61,89 +55,48 @@
     <main>
       <section id="contents">
         <div class="container">
-          <h2 class="ir_su">메인 컨텐츠</h2>
-          <section class="content con1">
-              <h3 class="ir_su">1번 컨텐츠</h3>
-              <div class="cover">
-                <h4 class="ir_su">1번 커버</h4>
-                <a href="#">first</a>
+          <div class="row">
+            <div class="panel p1">
+              <div class="cover c1 active">
+                <span>
+                  About Me
+                </span>
               </div>
-              <article class="column col1">
-                <h4 class="ir_su">1번 메인 이미지</h4>
-                <figure>
-                  <img src="img/test1.jpg" alt="이미지1">
-                </figure>
-              </article>
-              <article class="column col2">
-                <h4 class="ir_su">1번 이미지 설명 1</h4>
-              </article>
-              <article class="column col3">
-                <h4 class="ir_su">1번 이미지 설명 2</h4>
-              </article>
-          </section>
-          <!-- //1번 컨텐츠 -->
-          <section class="content con2">
-            <h3 class="ir_su">2번 컨텐츠</h3>
-            <div class="cover">
-              <h4 class="ir_su">2번 커버</h4>
-              <a href="#">second</a>
+              <div class="content1">
+                <img src="img/test1.jpg" alt="이미지1">
+              </div>
             </div>
-            <article class="column col1">
-              <h4 class="ir_su">2번 메인 이미지</h4>
-              <figure>
+            <div class="panel p2">
+              <div class="cover c2">
+                <span>
+                  About Me
+                </span>
+              </div>
+              <div class="content2">
                 <img src="img/test2.jpg" alt="이미지2">
-              </figure>
-            </article>
-            <article class="column col2">
-              <h4 class="ir_su">2번 이미지 설명 1</h4>
-            </article>
-            <article class="column col3">
-              <h4 class="ir_su">2번 이미지 설명 2</h4>
-            </article>
-          </section>
-          <!-- //2번 컨텐츠 -->
-          <section class="content con3">
-            <h3 class="ir_su">3번 컨텐츠</h3>
-            <div class="cover">
-              <h4 class="ir_su">3번 커버</h4>
-              <a href="#">third</a>
+              </div>
             </div>
-            <article class="column col1">
-              <h4 class="ir_su">3번 메인 이미지</h4>
-              <figure>
+            <div class="panel p3">
+              <div class="cover c3">
+                <span>
+                  About Me
+                </span>
+              </div>
+              <div class="content3">
                 <img src="img/test3.jpg" alt="이미지3">
-              </figure>
-            </article>
-            <article class="column col2">
-              <h4 class="ir_su">3번 이미지 설명 1</h4>
-            </article>
-            <article class="column col3">
-              <h4 class="ir_su">3번 이미지 설명 2</h4>
-            </article>
-
-          </section>
-          <!-- //3번 컨텐츠 -->
-          <section class="content con4">
-            <h3 class="ir_su">4번 컨텐츠</h3>
-            <div class="cover">
-              <h4 class="ir_su">4번 커버</h4>
-              <a href="#">fourth</a>
+              </div>
             </div>
-            <article class="column col1">
-              <h4 class="ir_su">4번 메인 이미지</h4>
-              <figure>
+            <div class="panel p4">
+              <div class="cover c4">
+                <span>
+                  About Me
+                </span>
+              </div>
+              <div class="content4">
                 <img src="img/test4.jpg" alt="이미지4">
-              </figure>
-            </article>
-            <article class="column col2">
-              <h4 class="ir_su">4번 이미지 설명 1</h4>
-            </article>
-            <article class="column col3">
-              <h4 class="ir_su">4번 이미지 설명 2</h4>
-            </article>
-
-          </section>
-          <!-- //4번 컨텐츠 -->
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -161,34 +114,132 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/modernizr-custom.js"></script>
     <script>
-    $(".cover").click(function(e){
-      var coverNode =  $(this);
-      $(".cover").attr("class","cover");
-      coverNode.attr("class","cover open");
+    $(".cover.c1").click(function(e){
 
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
 
+    if($(".cover.c1").hasClass("active")){
+      //이미 열려 있을 때
+      $(".cover.c1").removeClass('active');
+      $(".cover.c2").addClass("active");
+      $(".cover.c3, .cover.c4").addClass("right");
+      $(".cover.c1").addClass("left");
+    }
+    else {
+      //새로 열 때
+      $(".cover.c1").addClass("active");
+      $(".cover.c2, .cover.c3, .cover.c4").addClass("right");
+    }
 
-      if($(".cover").hasClass("open") ){
-        //open이 있을 때
-        $(this).parent().siblings().css({
-        "width" : "5%"
-        });
-        $(this).parent().css({
-        "width" : "85%"
-        });
-        $(this).siblings().css({
-          "display" : "block"
-        });
-        $(this).css({
-          "display" : "none"
-        });
-        $(this).parent().siblings().find(".column").css({
-          "display" : "none"
-        });
-        $(this).parent().siblings().find(".cover").css({
-          "display" : "block"
-        });
-      }
+    if($(".cover.c2").hasClass("active")){
+      $(".cover.c1").parent().css({
+      "margin-left" : "-90%"
+      });
+    }
+    if($(".cover.c1").hasClass("active")){
+      $(".cover.c1").parent().css({
+      "margin-left" : "0"
+      });
+    }
+
+    });
+
+    $(".cover.c2").click(function(e){
+
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+
+    if($(".cover.c2").hasClass("active")){
+      //이미 열려 있을 때
+      $(".cover.c2").removeClass('active');
+      $(".cover.c3").addClass("active");
+      $(".cover.c4").addClass("right");
+      $(".cover.c1, .cover.c2").addClass("left");
+    }
+    else {
+      //새로 열 때
+      $(".cover.c2").addClass("active");
+      $(".cover.c3, .cover.c4").addClass("right");
+      $(".cover.c1").addClass("left");
+    }
+
+    if($(".cover.c3").hasClass("active")){
+      $(".cover.c1, .cover.c2").parent().css({
+      "margin-left" : "-90%"
+      });
+    }
+    if($(".cover.c2").hasClass("active")){
+      $(".cover.c1, .cover.c2").parent().css({
+      "margin-left" : "0"
+      });
+    }
+
+    });
+
+    $(".cover.c3").click(function(e){
+
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+
+    if($(".cover.c3").hasClass("active")){
+      //이미 열려 있을 때
+      $(".cover.c3").removeClass('active');
+      $(".cover.c4").addClass("active");
+      $(".cover.c1, .cover.c2, .cover.c3").addClass("left");
+    }
+    else {
+      //새로 열 때
+      $(".cover.c3").addClass("active");
+      $(".cover.c4").addClass("right");
+      $(".cover.c1, .cover.c2").addClass("left");
+    }
+
+    if($(".cover.c4").hasClass("active")){
+      $(".cover.c1, .cover.c2, .cover.c3").parent().css({
+      "margin-left" : "-90%"
+      });
+    }
+    if($(".cover.c3").hasClass("active")){
+      $(".cover.c1, .cover.c2").parent().css({
+      "margin-left" : "0"
+      });
+    }
+
+    });
+
+    $(".cover.c4").click(function(e){
+
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+
+    if($(".cover.c4").hasClass("active")){
+      //이미 열려 있을 때
+      $(".cover.c4").removeClass('active');
+      $(".cover.c3").addClass("active");
+      $(".cover.c1, .cover.c2").addClass("left");
+      $(".cover.c4").addClass("right");
+    }
+    else {
+      //새로 열 때
+      $(".cover.c4").addClass("active");
+      $(".cover.c1, .cover.c2, cover.c3").addClass("left");
+    }
+
+    if($(".cover.c4").hasClass("active")){
+      $(".cover.c4").parent().siblings().css({
+      "margin-left" : "-90%"
+      });
+    }
+    if($(".cover.c3").hasClass("active")){
+      $(".cover.c3").parent().siblings(".left").css({
+      "margin-left" : "-90%"
+      });
+      $(".cover.c3").parent().siblings(".right").css({
+      "margin-left" : "0"
+      });
+    }
+
     });
 
     </script>
