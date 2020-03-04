@@ -17,6 +17,7 @@
 
     <!-- 웹 폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <!-- HTLM5shiv ie6~8 -->
     <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></script>
@@ -57,7 +58,7 @@
         <div class="container">
           <div class="row">
             <div class="panel p1">
-              <div class="cover c1 active">
+              <div class="cover c1">
                 <span>
                   About Me
                 </span>
@@ -114,133 +115,200 @@
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/modernizr-custom.js"></script>
     <script>
+
     $(".cover.c1").click(function(e){
 
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+      if($(".panel.p1").hasClass("active")){
+        //이미 열려 있을 때
+        /*$(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
 
-    if($(".cover.c1").hasClass("active")){
-      //이미 열려 있을 때
-      $(".cover.c1").removeClass('active');
-      $(".cover.c2").addClass("active");
-      $(".cover.c3, .cover.c4").addClass("right");
-      $(".cover.c1").addClass("left");
-    }
-    else {
-      //새로 열 때
-      $(".cover.c1").addClass("active");
-      $(".cover.c2, .cover.c3, .cover.c4").addClass("right");
-    }
+        $(".panel.p2").addClass("active");
+        $(".panel.p1").addClass("left");
+        $(".panel.p3, .panel.p4").addClass("right");*/
+      }
+      else {
+        //새로 열 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
 
-    if($(".cover.c2").hasClass("active")){
-      $(".cover.c1").parent().css({
-      "margin-left" : "-90%"
+        $(".panel.p1").addClass("active");
+        $(".panel.p2, .panel.p3, .panel.p4").addClass("right");
+      }
+
       });
-    }
-    if($(".cover.c1").hasClass("active")){
-      $(".cover.c1").parent().css({
-      "margin-left" : "0"
+
+      $(".cover.c2").click(function(e){
+
+      if($(".panel.p2").hasClass("active")){
+        //이미 열려 있을 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
+
+        $(".panel.p1").addClass("active");
+        $("panel.p1, .panel.p3, .panel.p4").addClass("right");
+      }
+      else {
+        //새로 열 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
+
+        $(".panel.p2").addClass("active");
+        $(".panel.p1").addClass("left");
+        $(".panel.p3, .panel.p4").addClass("right");
+      }
+
       });
-    }
 
-    });
+      $(".cover.c3").click(function(e){
 
-    $(".cover.c2").click(function(e){
+      if($(".panel.p3").hasClass("active")){
+        //이미 열려 있을 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
 
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+        $(".panel.p2").addClass("active");
+        $(".panel.p1").addClass("left");
+        $(".panel.p3, .panel.p4").addClass("right");
+      }
+      else {
+        //새로 열 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
 
-    if($(".cover.c2").hasClass("active")){
-      //이미 열려 있을 때
-      $(".cover.c2").removeClass('active');
-      $(".cover.c3").addClass("active");
-      $(".cover.c4").addClass("right");
-      $(".cover.c1, .cover.c2").addClass("left");
-    }
-    else {
-      //새로 열 때
-      $(".cover.c2").addClass("active");
-      $(".cover.c3, .cover.c4").addClass("right");
-      $(".cover.c1").addClass("left");
-    }
+        $(".panel.p3").addClass("active");
+        $(".panel.p1, .panel.p2").addClass("left");
+        $(".panel.p4").addClass("right");
+      }
 
-    if($(".cover.c3").hasClass("active")){
-      $(".cover.c1, .cover.c2").parent().css({
-      "margin-left" : "-90%"
       });
-    }
-    if($(".cover.c2").hasClass("active")){
-      $(".cover.c1, .cover.c2").parent().css({
-      "margin-left" : "0"
+
+      $(".cover.c4").click(function(e){
+
+      if($(".panel.p4").hasClass("active")){
+        //이미 열려 있을 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
+
+        $(".panel.p3").addClass("active");
+        $(".panel.p1, .panel.p2").addClass("left");
+        $(".panel.p4").removeClass("right");
+      }
+      else {
+        //새로 열 때
+        $(".panel").removeClass("active");
+        $(".panel").removeClass("left");
+        $(".panel").removeClass("right");
+
+        $(".panel.p4").addClass("active");
+        $(".panel.p1, .panel.p2, .panel.p3").addClass("left");
+      }
+
       });
-    }
+    //
+    // $(".cover.c2").click(function(e){
+    //
+    //   $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+    //   $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+    //
+    // if($(".cover.c2").hasClass("active")){
+    //   //이미 열려 있을 때
+    //   $(".cover.c2").removeClass('active');
+    //   $(".cover.c3").addClass("active");
+    //   $(".cover.c4").addClass("right");
+    //   $(".cover.c1, .cover.c2").addClass("left");
+    // }
+    // else {
+    //   //새로 열 때
+    //   $(".cover.c2").addClass("active");
+    //   $(".cover.c3, .cover.c4").addClass("right");
+    //   $(".cover.c1").addClass("left");
+    // }
+    //
+    // if($(".cover.c3").hasClass("active")){
+    //   $(".cover.c1, .cover.c2").parent().css({
+    //   "margin-left" : "-90%"
+    //   });
+    // }
+    // if($(".cover.c2").hasClass("active")){
+    //   $(".cover.c1, .cover.c2").parent().css({
+    //   "margin-left" : "0"
+    //   });
+    // }
+    //
+    // });
+    //
+    // $(".cover.c3").click(function(e){
+    //
+    //   $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+    //   $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+    //
+    // if($(".cover.c3").hasClass("active")){
+    //   //이미 열려 있을 때
+    //   $(".cover.c3").removeClass('active');
+    //   $(".cover.c4").addClass("active");
+    //   $(".cover.c1, .cover.c2, .cover.c3").addClass("left");
+    // }
+    // else {
+    //   //새로 열 때
+    //   $(".cover.c3").addClass("active");
+    //   $(".cover.c4").addClass("right");
+    //   $(".cover.c1, .cover.c2").addClass("left");
+    // }
+    //
+    // if($(".cover.c4").hasClass("active")){
+    //   $(".cover.c1, .cover.c2, .cover.c3").parent().css({
+    //   "margin-left" : "-90%"
+    //   });
+    // }
+    // if($(".cover.c3").hasClass("active")){
+    //   $(".cover.c1, .cover.c2").parent().css({
+    //   "margin-left" : "0"
+    //   });
+    // }
+    //
+    // });
+    //
+    // $(".cover.c4").click(function(e){
+    //
+    //   $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
+    //   $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
+    //
+    // if($(".cover.c4").hasClass("active")){
+    //   //이미 열려 있을 때
+    //   $(".cover.c4").removeClass('active');
+    //   $(".cover.c3").addClass("active");
+    //   $(".cover.c1, .cover.c2").addClass("left");
+    //   $(".cover.c4").addClass("right");
+    // }
+    // else {
+    //   //새로 열 때
+    //   $(".cover.c4").addClass("active");
+    //   $(".cover.c1, .cover.c2, cover.c3").addClass("left");
+    // }
+    //
+    // if($(".cover.c4").hasClass("active")){
+    //   $(".cover.c4").parent().siblings().css({
+    //   "margin-left" : "-90%"
+    //   });
+    // }
+    // if($(".cover.c3").hasClass("active")){
+    //   $(".cover.c3").parent().siblings(".left").css({
+    //   "margin-left" : "-90%"
+    //   });
+    //   $(".cover.c3").parent().siblings(".right").css({
+    //   "margin-left" : "0"
+    //   });
+    // }
 
-    });
-
-    $(".cover.c3").click(function(e){
-
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
-
-    if($(".cover.c3").hasClass("active")){
-      //이미 열려 있을 때
-      $(".cover.c3").removeClass('active');
-      $(".cover.c4").addClass("active");
-      $(".cover.c1, .cover.c2, .cover.c3").addClass("left");
-    }
-    else {
-      //새로 열 때
-      $(".cover.c3").addClass("active");
-      $(".cover.c4").addClass("right");
-      $(".cover.c1, .cover.c2").addClass("left");
-    }
-
-    if($(".cover.c4").hasClass("active")){
-      $(".cover.c1, .cover.c2, .cover.c3").parent().css({
-      "margin-left" : "-90%"
-      });
-    }
-    if($(".cover.c3").hasClass("active")){
-      $(".cover.c1, .cover.c2").parent().css({
-      "margin-left" : "0"
-      });
-    }
-
-    });
-
-    $(".cover.c4").click(function(e){
-
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("right");
-      $(".cover.c1, .cover.c2, .cover.c3, .cover.c4").removeClass("left");
-
-    if($(".cover.c4").hasClass("active")){
-      //이미 열려 있을 때
-      $(".cover.c4").removeClass('active');
-      $(".cover.c3").addClass("active");
-      $(".cover.c1, .cover.c2").addClass("left");
-      $(".cover.c4").addClass("right");
-    }
-    else {
-      //새로 열 때
-      $(".cover.c4").addClass("active");
-      $(".cover.c1, .cover.c2, cover.c3").addClass("left");
-    }
-
-    if($(".cover.c4").hasClass("active")){
-      $(".cover.c4").parent().siblings().css({
-      "margin-left" : "-90%"
-      });
-    }
-    if($(".cover.c3").hasClass("active")){
-      $(".cover.c3").parent().siblings(".left").css({
-      "margin-left" : "-90%"
-      });
-      $(".cover.c3").parent().siblings(".right").css({
-      "margin-left" : "0"
-      });
-    }
-
-    });
+    // });
 
     </script>
   </body>

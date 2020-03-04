@@ -34,16 +34,31 @@ body {  background-color: #000000;}
 
 .panel .cover span {
   position: fixed;
-  font-size: 20px;
+  font-size: 30px;
   height: 100%;
   width: 2.5%;
+  margin-left: 0;
   background-color: #ffffff;
   writing-mode:vertical-lr;
   border-right: 1px solid #dbdbdb;
+  overflow: hidden;
+  padding-top: 5px;
+  font-family: 'Nanum+Gothic', sans-serif;
+  font-weight: 1000;
+  text-transform: uppercase;
+  transition: box-shadow 0.5s ease-in-out;
 }
 .panel .cover span:nth-child(4) {
   border-right: 0;
 }
+
+.panel.right {margin-left: 0;}
+.panel.active span {
+  box-shadow:
+    inset -9em 0 0 0 #257fac,
+    inset 9em 0 0 0 #257fac;
+}
+.panel.left {margin-left: -90%;}
 
 .panel.p1 {
   width: 90%;
