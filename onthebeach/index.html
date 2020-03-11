@@ -57,7 +57,7 @@
       <section id="contents">
         <div class="container">
           <div class="panels">
-            <div class="panel p1 ">
+            <div class="panel p1 active">
               <div class="cover c1">
                 <span>
                   About Me
@@ -65,12 +65,56 @@
               </div>
               <div class="content">
                 <img src="img/test1.jpg" alt="이미지1">
-                <img src="img/test1.jpg" alt="이미지1">
-                <img src="img/test1.jpg" alt="이미지1">
-                <img src="img/test1.jpg" alt="이미지1">
+                <p>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                  이 페이지는 테스트 페이지 입니다.</br>
+                </p>
               </div>
             </div>
-            <div class="panel p2">
+            <div class="panel p2 right">
               <div class="cover c2">
                 <span>
                   About Me
@@ -80,7 +124,7 @@
                 <img src="img/test2.jpg" alt="이미지2">
               </div>
             </div>
-            <div class="panel p3">
+            <div class="panel p3 right">
               <div class="cover c3">
                 <span>
                   About Me
@@ -90,7 +134,7 @@
                 <img src="img/test3.jpg" alt="이미지3">
               </div>
             </div>
-            <div class="panel p4">
+            <div class="panel p4 right">
               <div class="cover c4">
                 <span>
                   About Me
@@ -107,7 +151,7 @@
     <!-- //main -->
 
 
-    <footer id="footer">
+    <!-- <footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="footer">
@@ -128,13 +172,47 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- //footer -->
     <!-- JavaScript Libraries -->
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/modernizr-custom.js"></script>
     <script>
-
+    function includeHTML(callback) {
+  var z, i, elmnt, file, xhr;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("include-html");
+    //console.log(file);
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = "Page not found.";
+          }
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("include-html");
+          includeHTML(callback);
+        }
+      };
+      xhr.open("GET", file, true);
+      xhr.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+  setTimeout(function() {
+    callback();
+  }, 0);
+}
     $(".cover.c1").click(function(e){
 
       if($(".panel.p1").hasClass("active")){
@@ -168,7 +246,7 @@
         $(".panel").removeClass("right");
 
         $(".panel.p1").addClass("active");
-        $("panel.p1, .panel.p3, .panel.p4").addClass("right");
+        $(".panel.p2, .panel.p3, .panel.p4").addClass("right");
       }
       else {
         //새로 열 때
@@ -218,7 +296,7 @@
 
         $(".panel.p3").addClass("active");
         $(".panel.p1, .panel.p2").addClass("left");
-        $(".panel.p4").removeClass("right");
+        $(".panel.p4").addClass("right");
       }
       else {
         //새로 열 때
